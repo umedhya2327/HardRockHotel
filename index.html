@@ -18,6 +18,7 @@
 </head>
 <body>
 	
+	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		
 		<div class="container">
@@ -47,21 +48,47 @@
 			</div>   
 		</div>
 	</nav>    
+	
 
-	<div id="section1">
-		<header id="header-area" class="intro-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 text-center">
-						<div class="header-content">
-							<h1>HardRock Hotel </h1>
-							<h4>Spend your happy movments with us</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-	</div>
+	<div class="slideshow-container">
+
+		<div class="mySlides fade">
+		
+		  <img src="img/1.jpg" style="width:100%; height: 620px;" >
+		  <div class="text">Spend your Happy Times with us</div>
+		</div>
+		
+		<div class="mySlides fade">
+		
+		  <img src="img/2.jpg" style="width:100%; height: 620px;">
+		  <div class="text">Best Facilites Ever</div>
+		</div>
+		
+		<div class="mySlides fade">
+		
+		  <img src="img/4.jpg" style="width:100%; height: 620px;">
+		  <div class="text">Happy Family Resort
+		  </div>
+		</div>
+		
+		</div>
+		<br>
+		
+		<div style="text-align:center">
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		</div>
+        <!-- Social Media icons-->
+		<div class="icon-bar">
+			<a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a> 
+			<a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+			<a href="https://www.myaccount.google.com" class="google"><i class="fa fa-google"></i></a> 
+			<a href="https://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
+			
+		  </div>
+		  <!--End Social Media icons-->
+		  
 	<div id="section2">
 		<!-- Start Blog Area -->
 		<section id="blog-area" class="blog-section">
@@ -241,33 +268,42 @@
 								<div class="row">
 									<div class="col-sm-12 text-center inner">
 										<div class="contact-content">
-											<h1>contact form</h1>
-											<div class="row">                            
-												<div class="col-sm-12">
-													
-													</div>                            
-												</div>
-	
+											<h1>contact</h1>
+										
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-lg-12">
-											<form action="#" method="post" class="contact-form">
-												<div class="col-sm-6 contact-form-left">
-													<div class="form-group">
-														<input name="name" type="text" class="form-control" id="name" placeholder="Name">
-														  <input type="email" name="email" class="form-control" id="mail" placeholder="Email">
-														<input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
+									<div class="row text-center inner">
+										<div class="col-sm-6">
+											<h3>Contat form</h3><br>
+												<form action="#" method="post" class="contact-form">
+													<div class="col-sm-6 contact-form-left">
+														<div class="form-group">
+															<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+															  <input type="email" name="email" class="form-control" id="mail" placeholder="Email">
+															<input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
+														</div>
+													</div>
+													<div class="col-sm-6 contact-form-right">
+														<div class="form-group">
+															<textarea name="message" rows="6" class="form-control" id="comment" placeholder="Your message here..."></textarea>
+															<button type="submit" class="btn btn-default">Send</button>
+														</div>
+													</div>                        
+												</form>   
+												
+											<div class="col-sm-6">
+												<h3>Location</h3>
+												
+														<iframe width="300" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=colombo&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+														<a href="https://fmovies2.org">fmovies</a><br>
+														<style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style>
+														<a href="https://www.embedgooglemap.net">embedding maps</a>
+													<style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
 													</div>
 												</div>
-												<div class="col-sm-6 contact-form-right">
-													<div class="form-group">
-														<textarea name="message" rows="6" class="form-control" id="comment" placeholder="Your message here..."></textarea>
-														<button type="submit" class="btn btn-default">Send</button>
-													</div>
-												</div>                        
-											</form>    
+											</div>
+	    
 										</div>                
 									</div>
 								</div>
@@ -375,7 +411,29 @@
         	$('.single-page-nav').removeClass('show');
         });
         
-    });
+	});
+	
+	var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
 </script>
 </body>
 </html>
+
+
